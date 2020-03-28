@@ -1,0 +1,20 @@
+#:kivy 1.8.0
+
+<CameraClick>:
+    canvas.before:
+        Color:
+            rgba: 0, 1, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    orientation: 'vertical'
+    Camera:
+        id: camera
+        resolution: (1280, 1024)
+        play: True
+        size: root.height, root.width
+    Label:
+        id: counter
+        font_size: 70
+        text: "Loading..."
+        markup: True
