@@ -1,20 +1,21 @@
 #:kivy 1.8.0
 
 <CameraClick>:
-    canvas.before:
-        Color:
-            rgba: 0, 1, 0, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
-    orientation: 'vertical'
+    orientation: 'horizontal'
     Camera:
         id: camera
-        resolution: (1280, 1024)
+        resolution: (1280, 720)
         play: True
-        size: root.height, root.width
+        size_hint: 1, 1
+        allow_stretch: True
     Label:
         id: counter
         font_size: 70
         text: "Loading..."
         markup: True
+    Button:
+        on_release: app.open_settings()
+        size_hint: .2, .1
+        pos_hint: {'x': .4, 'y': 0}
+        text: 'Configure app'
+        background_color: 0, .439, .29, 1
